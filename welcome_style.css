@@ -7,6 +7,7 @@ body, html {
     background: #DAD7CD; /* Light background color */
     color: #344E41; /* Dark text color */
     display: flex;
+    flex-direction: column; /* Change to column for responsive */
 }
 
 .sidebar {
@@ -76,6 +77,7 @@ body, html {
     width: calc(100% - 250px);
     background: #DAD7CD; /* Light background */
     text-align: center;
+    flex-grow: 1;
 }
 
 .background-section {
@@ -107,7 +109,7 @@ body, html {
 .main-title {
     font-size: 3rem;
     letter-spacing: 0.1rem;
-    color: #ffffff; /* Light title color */
+    color: #DAD7CD; /* Light title color */
     text-align: center;
     padding: 1rem 0;
 }
@@ -143,16 +145,55 @@ footer {
 
 @media (max-width: 768px) {
     .sidebar {
-        width: 200px;
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .sidebar .container ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .sidebar .container ul li a {
-        padding: 0.5rem;
+        padding: 0.5rem 1rem;
     }
     .submenu li a {
         padding-left: 1.5rem;
     }
     .main-content {
-        margin-left: 200px;
-        width: calc(100% - 200px);
+        margin-left: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+    .content-section {
+        padding: 1rem;
+    }
+    .main-title {
+        font-size: 2rem;
+    }
+    .responsive-img {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar .container ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .sidebar .container ul li a {
+        padding: 0.5rem;
+    }
+    .main-content {
+        padding: 0.5rem;
+    }
+    .content-section {
+        padding: 0.5rem;
+    }
+    .main-title {
+        font-size: 1.5rem;
+    }
+    .responsive-img {
+        max-width: 100%;
     }
 }
