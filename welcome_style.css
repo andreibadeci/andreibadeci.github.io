@@ -1,0 +1,158 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background: #DAD7CD; /* Light background color */
+    color: #344E41; /* Dark text color */
+    display: flex;
+}
+
+.sidebar {
+    background: #3A5A40; /* Darker sidebar color */
+    padding: 1rem 0;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.sidebar .container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .container ul li {
+    position: relative;
+}
+
+.sidebar .container ul li a {
+    color: #DAD7CD; /* Light text color */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar .container ul li a:hover {
+    background-color: #588157; /* Hover color */
+    color: #DAD7CD; /* Light hover text color */
+}
+
+.sidebar .container ul li .submenu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .container ul li:hover .submenu {
+    display: block;
+}
+
+.submenu li a {
+    padding-left: 2rem;
+    font-weight: normal;
+    color: #A3B18A; /* Submenu text color */
+    background-color: #3A5A40; /* Submenu background */
+    border-left: 4px solid #588157; /* Border color */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submenu li a:hover {
+    color: #DAD7CD; /* Light hover text color */
+    background-color: #588157; /* Hover background color */
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 2rem;
+    width: calc(100% - 250px);
+    background: #DAD7CD; /* Light background */
+    text-align: center;
+}
+
+.background-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('resources/SC Expose2.31.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.content-section {
+    background: #FFFFFF; /* White background for content */
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.content-section.light-grey {
+    background: #A3B18A; /* Light grey background */
+    padding: 2rem;
+}
+
+.main-title {
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+    color: #ffffff; /* Light title color */
+    text-align: center;
+    padding: 1rem 0;
+}
+
+footer {
+    background: #3A5A40; /* Darker footer background */
+    color: #DAD7CD; /* Light footer text */
+    text-align: center;
+    padding: 0.25rem;
+    font-size: 0.75rem;
+    width: 100%;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 1rem 0;
+}
+
+.image-container.light-grey {
+    background: #A3B18A; /* Light grey background */
+}
+
+.responsive-img {
+    max-width: 45%;
+    height: auto;
+    margin: 0.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+    .sidebar .container ul li a {
+        padding: 0.5rem;
+    }
+    .submenu li a {
+        padding-left: 1.5rem;
+    }
+    .main-content {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+}
