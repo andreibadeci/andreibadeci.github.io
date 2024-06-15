@@ -21,6 +21,11 @@ body, html {
     left: 0;
     z-index: 1000;
     overflow-y: auto;
+    transition: transform 0.3s ease;
+}
+
+.sidebar.active {
+    transform: translateX(0);
 }
 
 .sidebar .container ul {
@@ -78,6 +83,7 @@ body, html {
     width: calc(100% - 250px);
     background: #DAD7CD; /* Light background */
     text-align: center;
+    transition: margin-left 0.3s ease;
 }
 
 .background-section {
@@ -143,6 +149,25 @@ footer {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
 }
 
+.hamburger-menu {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+}
+
+.hamburger-menu .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #344E41;
+}
+
 @media (max-width: 768px) {
     .sidebar {
         width: 200px;
@@ -166,8 +191,13 @@ footer {
     .sidebar {
         width: 100%;
         height: auto;
-        position: relative;
-        padding: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+    }
+    .sidebar.active {
+        transform: translateX(0);
     }
     .sidebar .container {
         display: flex;
@@ -207,5 +237,8 @@ footer {
     .responsive-img {
         max-width: 90%;
         margin: 0.5rem 0;
+    }
+    .hamburger-menu {
+        display: flex;
     }
 }

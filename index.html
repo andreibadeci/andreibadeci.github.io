@@ -9,7 +9,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 </head>
 <body>
-    <nav class="sidebar">
+    <div class="hamburger-menu" id="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <nav class="sidebar" id="sidebar">
         <div class="container">
             <ul>
                 <li><a href="welcome.html">Willkommen</a></li>
@@ -164,6 +170,10 @@
     <script>
         AOS.init({
             duration: 1200,
+        });
+
+        document.getElementById('hamburger-menu').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('active');
         });
     </script>
 </body>
