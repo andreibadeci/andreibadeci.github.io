@@ -90,7 +90,7 @@ body, html {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background-image: url('resources/SC Expose2.31.png');
+    background-image: url('resources/House_3.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -115,7 +115,7 @@ body, html {
 .main-title {
     font-size: 3rem;
     letter-spacing: 0.1rem;
-    color: #DAD7CD; /* Light title color */
+    color: #ffffff; /* Light title color */
     text-align: center;
     padding: 1rem 0;
 }
