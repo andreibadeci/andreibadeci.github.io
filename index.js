@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const sidebar = document.getElementById('sidebar');
     const hamburgerMenu = document.getElementById('hamburger-menu');
     let isMobile = window.matchMedia("(max-width: 480px)").matches;
-    let userScrolling = false;
+    let isNavigating = false;
 
     hamburgerMenu.addEventListener('click', function() {
         sidebar.classList.toggle('active');
@@ -20,14 +20,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    document.addEventListener('touchstart', function(event) {
-        userScrolling = true;
+    sidebar.addEventListener('click', function(event) {
+        if (event.target.tagName === 'A') {
+            isNavigating = true;
+        }
+    });
+
+    sidebar.addEventListener('transitionend', function() {
+        setTimeout(() => isNavigating = false, 500);
     });
 
     document.addEventListener('scroll', function(event) {
-        if (isMobile && userScrolling && !sidebar.contains(document.activeElement)) {
+        if (isMobile && !isNavigating && !sidebar.contains(event.target)) {
             hideSidebar();
-            userScrolling = false;
         }
     }, true);
 
