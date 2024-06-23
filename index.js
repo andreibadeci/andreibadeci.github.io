@@ -14,12 +14,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     document.addEventListener('click', function(event) {
-        if (!sidebar.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+        if (isMobile && !sidebar.contains(event.target) && !hamburgerMenu.contains(event.target)) {
             hideSidebar();
         }
     });
 
-    document.addEventListener('scroll', hideSidebar, true);
+    document.addEventListener('scroll', function(event) {
+        if (isMobile && !sidebar.contains(event.target)) {
+            hideSidebar();
+        }
+    }, true);
 
     window.addEventListener('resize', function() {
         isMobile = window.matchMedia("(max-width: 480px)").matches;
