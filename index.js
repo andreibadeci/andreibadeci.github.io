@@ -19,12 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    document.addEventListener('scroll', function(event) {
-        if (isMobile && !sidebar.contains(event.target)) {
-            hideSidebar();
-        }
-    }, true);
-
     window.addEventListener('resize', function() {
         isMobile = window.matchMedia("(max-width: 480px)").matches;
     });
